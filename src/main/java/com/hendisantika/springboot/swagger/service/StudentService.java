@@ -16,27 +16,28 @@ import java.util.stream.Collectors;
 @Service
 public class StudentService {
     private static Map<Integer, Student> studentDB;
-    private Fairy fairy = Fairy.create();
-
+//    private Fairy fairy = Fairy.create();
+//
     @PostConstruct
     public void init() throws Exception {
         studentDB = new HashMap<>();
-        for (int i = 0; i < 100; i++) {
-            Student student = new Student(i, fairy.person());
+        for (int i = 0; i < 10; i++) {
+//            Student student = new Student(i, fairy.person());
+            Student student = new Student();
             studentDB.put(new Integer(i), student);
         }
     }
-
+//
     public List<Student> getAll(){
         List<Student> studentList = studentDB.entrySet().stream()
                 .map(Map.Entry::getValue).collect(Collectors.toList());
         return studentList;
     }
-
+//
     public Student getStudentById(Integer studentId) {
         return studentDB.get(studentId);
     }
-
+//
     public List<Student> filterByAge(Integer age) {
         List<Student> studentList = studentDB.entrySet().stream().filter(e -> e.getValue().getAge() > age)
                 .map(Map.Entry::getValue).collect(Collectors.toList());

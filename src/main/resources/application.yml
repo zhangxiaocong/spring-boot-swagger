@@ -10,9 +10,19 @@ spring:
   datasource:
     url: jdbc:mysql://localhost/swaggerDB?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Jakarta&useSSL=false
     username: root
-    password: root
+    password: zxc6545398
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#
+#springfox:
+#        documentation:
+#          swagger-ui:
+#            baseUrl: scheduler-service
